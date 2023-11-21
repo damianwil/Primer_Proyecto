@@ -459,8 +459,14 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oavuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6pva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oavuq")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -724,7 +730,7 @@ layer_0/tile_data = PackedInt32Array(1114115, 131073, 1, 1114116, 131073, 1, 111
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
 texture_filter = 1
-position = Vector2(606, 364)
+position = Vector2(467, 492)
 slide_on_ceiling = false
 script = ExtResource("2_lxvtv")
 
@@ -734,6 +740,8 @@ scale = Vector2(1.85897, 2.34483)
 sprite_frames = SubResource("SpriteFrames_4o31k")
 animation = &"hit"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]

@@ -55,7 +55,7 @@ func _input(event):
 		set_physics_process(false)
 		sprite2d.play("attack")
 		$Area2D/CollisionShape2D.disabled = false
-		await (sprite2d.animation_finished)
+		await sprite2d.animation_finished
 		$Area2D/CollisionShape2D.disabled = true
 		set_physics_process(true)
 
@@ -83,7 +83,6 @@ func hit():
 	else:
 		velocity = Vector2(100,-200)
 	
-	
 	sprite2d.play("hit")
 	await sprite2d.animation_finished
 	velocity = Vector2.ZERO
@@ -92,4 +91,3 @@ func hit():
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Enemy"):
 		body.dead()
-	
