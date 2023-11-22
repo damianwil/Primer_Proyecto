@@ -468,7 +468,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -740,7 +740,7 @@ scale = Vector2(1.85897, 2.34483)
 sprite_frames = SubResource("SpriteFrames_4o31k")
 animation = &"hit"
 autoplay = "idle"
-frame = 3
+frame = 1
 frame_progress = 1.0
 metadata/_edit_group_ = true
 

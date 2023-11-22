@@ -13,9 +13,12 @@ var hitplayer = false
 func _ready():
 	hit()
 	$Area2D/CollisionShape2D.disabled = true
-
+	
+	
 func _physics_process(delta):
+	
 	velocity.y += gravity*delta
+	
 	if !hitplayer:
 		if Input.is_action_pressed("right"):
 			$CollisionShape2D.position.x = -40.5
@@ -44,11 +47,9 @@ func _physics_process(delta):
 			if Input.is_action_just_released("jump"):
 				velocity.y += 1800*delta
 			
-		move_and_slide()
-		
-		
 		animaciones()
 	
+	move_and_slide()
 	
 func _input(event):
 	if Input.is_action_just_pressed("attack") and !hitplayer:
@@ -76,13 +77,10 @@ func animaciones():
 func hit():
 	hitplayer = true
 	velocity = Vector2.ZERO
-	
 	if !sprite2d.flip_h:
 		velocity = Vector2(-100,-200)
-		
 	else:
 		velocity = Vector2(100,-200)
-	
 	sprite2d.play("hit")
 	await sprite2d.animation_finished
 	velocity = Vector2.ZERO
