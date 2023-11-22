@@ -468,7 +468,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 9.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -740,10 +740,9 @@ script = ExtResource("2_lxvtv")
 position = Vector2(-27.5, 26)
 scale = Vector2(1.85897, 2.34483)
 sprite_frames = SubResource("SpriteFrames_4o31k")
-animation = &"hit"
+animation = &"idle"
 autoplay = "idle"
-frame = 1
-frame_progress = 1.0
+frame_progress = 0.346746
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -761,7 +760,7 @@ shape = SubResource("RectangleShape2D_34k7o")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(406, 386)
 zoom = Vector2(0.85, 0.85)
-limit_left = -9999975
+limit_left = -9999971
 
 [node name="Enemy" type="CharacterBody2D" parent="." groups=["Enemy"]]
 texture_filter = 1

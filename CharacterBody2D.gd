@@ -78,9 +78,9 @@ func hit():
 	hitplayer = true
 	velocity = Vector2.ZERO
 	if !sprite2d.flip_h:
-		velocity = Vector2(-100,-200)
+		velocity = Vector2(-300,-200)
 	else:
-		velocity = Vector2(100,-200)
+		velocity = Vector2(300,-200)
 	sprite2d.play("hit")
 	await sprite2d.animation_finished
 	velocity = Vector2.ZERO
