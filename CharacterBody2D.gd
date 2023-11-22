@@ -52,13 +52,14 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _input(event):
-	if Input.is_action_just_pressed("attack") and !hitplayer:
-		set_physics_process(false)
-		sprite2d.play("attack")
-		$Area2D/CollisionShape2D.disabled = false
-		await sprite2d.animation_finished
-		$Area2D/CollisionShape2D.disabled = true
-		set_physics_process(true)
+	if is_on_floor():
+		if Input.is_action_just_pressed("attack") and !hitplayer:
+			set_physics_process(false)
+			sprite2d.play("attack")
+			$Area2D/CollisionShape2D.disabled = false
+			await sprite2d.animation_finished
+			$Area2D/CollisionShape2D.disabled = true
+			set_physics_process(true)
 
 
 func animaciones():
