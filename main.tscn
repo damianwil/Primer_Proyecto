@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c2fwixb85jvmi"]
+[gd_scene load_steps=67 format=3 uid="uid://c2fwixb85jvmi"]
 
 [ext_resource type="Texture2D" uid="uid://c6ki5wvyj4wii" path="res://Sprites/14-TileSets/Terrain (32x32).png" id="1_4tbfm"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_lxvtv"]
@@ -720,6 +720,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1ar4"]
 size = Vector2(35, 53)
 
+[sub_resource type="Curve2D" id="Curve2D_71hch"]
+
 [node name="main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -789,5 +791,10 @@ metadata/_edit_group_ = true
 position = Vector2(62, 98)
 target_position = Vector2(-200, 0)
 metadata/_edit_group_ = true
+
+[node name="Plataforma" type="Path2D" parent="."]
+curve = SubResource("Curve2D_71hch")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Plataforma"]
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
