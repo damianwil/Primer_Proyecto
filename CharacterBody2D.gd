@@ -11,6 +11,7 @@ var max_jump:int=2
 var hitplayer = false
 
 func _ready():
+	$"../Level".play()
 	hit()
 	$Area2D/CollisionShape2D.disabled = true
 	
@@ -36,11 +37,13 @@ func _physics_process(delta):
 		if is_on_floor():
 			cont_jump= 0
 			if Input.is_action_just_pressed("jump"):
+				$jump.play()
 				cont_jump+=1
 				velocity.y = -JUMP
 				
 		else:
 			if Input.is_action_just_pressed("jump") and max_jump > cont_jump:
+				$jump.play()
 				cont_jump+=1
 				velocity.y = -JUMP
 				
@@ -54,14 +57,13 @@ func _physics_process(delta):
 func _input(event):
 	if is_on_floor():
 		if Input.is_action_just_pressed("attack") and !hitplayer:
+			$attack.play()
 			set_physics_process(false)
 			sprite2d.play("attack")
 			$Area2D/CollisionShape2D.disabled = false
 			await sprite2d.animation_finished
 			$Area2D/CollisionShape2D.disabled = true
 			set_physics_process(true)
-
-
 func animaciones():
 	if is_on_floor():
 		if velocity.x !=0:
